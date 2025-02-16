@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}API Documentation{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2 class="mb-4">API Documentation</h2>
+    
+    <!-- Quick Start Guide -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Quick Start Guide</h4>
+        </div>
+        <div class="card-body">
+            <h5>Authentication</h5>
+            <p>All API requests require authentication using your API key. Include it in the HTTP header:</p>
+            <pre class="bg-light p-3 rounded"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+            
+            <h5 class="mt-4">Base URL</h5>
+            <pre class="bg-light p-3 rounded"><code>https://api.interviewpro.example.com/v1</code></pre>
+        </div>
+    </div>
+
+    <!-- Endpoints -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Endpoints</h4>
+        </div>
+        <div class="card-body">
+            <!-- Performance Data Endpoint -->
+            <div class="endpoint-section mb-4">
+                <h5>Get Performance Data</h5>
+                <pre class="bg-light p-3 rounded"><code>GET /performance-data</code></pre>
+                
+                <h6 class="mt-3">Parameters</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>session_id</td>
+                            <td>string</td>
+                            <td>The interview session ID</td>
+                        </tr>
+                        <tr>
+                            <td>metrics</td>
+                            <td>array</td>
+                            <td>Array of metrics to retrieve (optional)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6 class="mt-3">Example Response</h6>
+                <pre class="bg-light p-3 rounded"><code>{
+    "session_id": "12345",
+    "metrics": {
+        "duration": 1800,
+        "question_count": 15,
+        "average_response_time": 45,
+        "confidence_score": 0.85
+    }
+}</code></pre>
+            </div>
+
+            <!-- Session Analytics Endpoint -->
+            <div class="endpoint-section mb-4">
+                <h5>Get Session Analytics</h5>
+                <pre class="bg-light p-3 rounded"><code>GET /session-analytics</code></pre>
+                
+                <h6 class="mt-3">Parameters</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>date_range</td>
+                            <td>string</td>
+                            <td>Time period for analytics (e.g., "7d", "30d")</td>
+                        </tr>
+                        <tr>
+                            <td>metrics</td>
+                            <td>array</td>
+                            <td>Specific metrics to analyze (optional)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6 class="mt-3">Example Response</h6>
+                <pre class="bg-light p-3 rounded"><code>{
+    "total_sessions": 50,
+    "average_duration": 1500,
+    "completion_rate": 0.92,
+    "top_topics": [
+        "system design",
+        "algorithms",
+        "behavioral"
+    ]
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Codes -->
+    <div class="card">
+        <div class="card-header">
+            <h4>Error Codes</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>400</td>
+                        <td>Bad Request - Invalid parameters</td>
+                    </tr>
+                    <tr>
+                        <td>401</td>
+                        <td>Unauthorized - Invalid or missing API key</td>
+                    </tr>
+                    <tr>
+                        <td>403</td>
+                        <td>Forbidden - API key lacks required permissions</td>
+                    </tr>
+                    <tr>
+                        <td>429</td>
+                        <td>Too Many Requests - Rate limit exceeded</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>Internal Server Error</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
