@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - InterviewPro Developer Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold text-primary">Interview</span><span class="fw-bold">Pro</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="documentation.html">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logoutBtn">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="documentation-nav">
+                    <div class="nav flex-column">
+                        <a class="nav-link active" href="#getting-started">Getting Started</a>
+                        <a class="nav-link" href="#authentication">Authentication</a>
+                        <a class="nav-link" href="#endpoints">API Endpoints</a>
+                        <a class="nav-link" href="#rate-limits">Rate Limits</a>
+                        <a class="nav-link" href="#error-handling">Error Handling</a>
+                        <a class="nav-link" href="#webhooks">Webhooks</a>
+                        <a class="nav-link" href="#sdks">SDKs & Libraries</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                <div class="documentation-content">
+                    <section id="getting-started">
+                        <h2>Getting Started</h2>
+                        <p>Welcome to the InterviewPro API documentation. Our API enables you to integrate our interview preparation platform into your applications.</p>
+                        
+                        <h3>Base URL</h3>
+                        <pre><code>https://api.interviewpro.com/v1</code></pre>
+
+                        <h3>Quick Start</h3>
+                        <ol>
+                            <li>Sign up for an account</li>
+                            <li>Generate an API key from the dashboard</li>
+                            <li>Make your first API request</li>
+                        </ol>
+                    </section>
+
+                    <section id="authentication">
+                        <h2>Authentication</h2>
+                        <p>All API requests require authentication using your API key. Include it in the Authorization header:</p>
+                        <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+                    </section>
+
+                    <section id="endpoints">
+                        <h2>API Endpoints</h2>
+                        
+                        <h3>Questions</h3>
+                        <pre><code>GET /questions
+POST /questions
+GET /questions/{id}
+PUT /questions/{id}
+DELETE /questions/{id}</code></pre>
+
+                        <h3>Categories</h3>
+                        <pre><code>GET /categories
+GET /categories/{id}/questions</code></pre>
+
+                        <h3>Progress</h3>
+                        <pre><code>GET /progress
+POST /progress
+GET /progress/{userId}</code></pre>
+                    </section>
+
+                    <section id="rate-limits">
+                        <h2>Rate Limits</h2>
+                        <p>API requests are limited based on your plan:</p>
+                        <ul>
+                            <li>Free: 1,000 requests/hour</li>
+                            <li>Pro: 10,000 requests/hour</li>
+                            <li>Enterprise: Custom limits</li>
+                        </ul>
+                    </section>
+
+                    <section id="error-handling">
+                        <h2>Error Handling</h2>
+                        <p>The API uses standard HTTP response codes:</p>
+                        <ul>
+                            <li>200: Success</li>
+                            <li>400: Bad Request</li>
+                            <li>401: Unauthorized</li>
+                            <li>403: Forbidden</li>
+                            <li>404: Not Found</li>
+                            <li>429: Too Many Requests</li>
+                            <li>500: Server Error</li>
+                        </ul>
+                    </section>
+
+                    <section id="webhooks">
+                        <h2>Webhooks</h2>
+                        <p>Set up webhooks to receive real-time updates:</p>
+                        <pre><code>POST /webhooks
+{
+    "url": "https://your-domain.com/webhook",
+    "events": ["question.created", "progress.updated"]
+}</code></pre>
+                    </section>
+
+                    <section id="sdks">
+                        <h2>SDKs & Libraries</h2>
+                        <p>Official SDKs are available for:</p>
+                        <ul>
+                            <li>Python: <code>pip install interviewpro</code></li>
+                            <li>JavaScript: <code>npm install @interviewpro/sdk</code></li>
+                            <li>Java: Available via Maven Central</li>
+                            <li>Ruby: Available via RubyGems</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

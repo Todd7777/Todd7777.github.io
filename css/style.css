@@ -1,0 +1,166 @@
+/* Global Styles */
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+.navbar {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.card {
+    background: white;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Dashboard Styles */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-title {
+    color: #94a3b8;
+    font-size: 0.813rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.time-range-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.time-range-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 0.813rem;
+    font-weight: 500;
+    border-radius: 8px;
+    color: #64748b;
+    background: white;
+    border: 1px solid #f1f5f9;
+    transition: all 0.2s ease-in-out;
+}
+
+.time-range-buttons button:hover {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #475569;
+}
+
+.time-range-buttons button.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.chart-container {
+    padding: 0.5rem;
+}
+
+.trend-toggles {
+    display: flex;
+    gap: 1rem;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.813rem;
+    font-weight: 500;
+    color: #64748b;
+    background: white;
+    border: 1px solid #f1f5f9;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+.toggle-btn.active {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+.toggle-btn.active .toggle-dot {
+    opacity: 1;
+}
+
+.toggle-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.4;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Documentation Styles */
+.documentation-nav {
+    position: sticky;
+    top: 2rem;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.documentation-nav .nav-link {
+    color: #64748b;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.documentation-nav .nav-link:hover {
+    color: #3b82f6;
+}
+
+.documentation-nav .nav-link.active {
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+.documentation-content {
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+.documentation-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.documentation-content h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.documentation-content pre {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.documentation-content code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.813rem;
+    color: #3b82f6;
+}
